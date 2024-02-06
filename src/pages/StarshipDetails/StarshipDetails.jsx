@@ -2,27 +2,28 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
-// services
-import { getStarship} from "../../services/sw-api"
-
 //css
 import './StarshipDetails.css'
+
+// services
+import { getStarship} from "../../services/sw-api"
 
 const StarshipDetails = () => {
   const [starshipDetails, setStarshipDetails] = useState({})
 
-  const { starshipId } = useParams()
-  console.log("Inside starShipDetails StarshipId:"+ {starshipId})
+  const {starshipId} = useParams()
+  console.log("Inside starShipDetails StarshipId:")
+  console.dir({starshipId})
   
 
-  // useEffect(() => {
-  //   const fetchDetails = async () => {
-  //     const starshipData = await getStarship(starshipId)
-  //     setStarshipDetails(starshipData)
-  //   }
+  useEffect(() => {
+    const fetchDetails = async () => {
+      const starshipData = await getStarship({starshipId}.starshipId)
+      setStarshipDetails(starshipData)
+    }
     
-  //   fetchDetails()
-  // }, [starshipId])
+    fetchDetails()
+  }, [starshipId])
 
 
 

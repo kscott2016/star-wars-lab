@@ -1,26 +1,30 @@
+//modules
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 //api service
-import * as starshipService from "../../services/sw-api"
+// import * as starshipService from "../../services/sw-api"
+import { getStarships } from "../../services/sw-api" 
 
+//css
+import './StarshipsList.css'
 
+//components
 import Starship from "../../components/Starships/Starship"
-
-import { Link } from "react-router-dom"
 
 const StarshipList = () => {
 
-  const [starships, setStarships] = useState([])
+  const [starshipList, setStarshipList] = useState([])
   
   useEffect(() => {
     const fetchStarships= async () => {
-      const starshipData = await starshipService.getStarships()
-      setStarships(starshipData.results)
+      const starshipData = await getStarships()
+      setStarshipList(starshipData.results)
     }
     fetchStarships()
   }, [])
 
-  if(!starships.length) return <h1>Loading...</h1>
+  if(!starshipList.length) return <h1>Loading...</h1>
 
   return ( 
     <>
@@ -29,16 +33,20 @@ const StarshipList = () => {
       </section>
       <section className='starships-wrapper'>
         <ul className='starships-list'>
-          {starships.map((ship,idx) => {
+          {starshipList.map((ship,idx) => {
+            console.log("Ship:")
+            console.log(ship)
 
           let shipID = (ship.url).replace('https://swapi.dev/api/starships/',"")
           shipID=shipID.replace('/','')
+          console.log("ShipID")
+          console.log(shipID)
 
-            return (<Link key= {idx} to={`/starships/${shipID}`}>
-              <Starship 
+          return (<Link key= {idx} to={`/starships/${shipID}`}>
+            <Starship key={shipID}
               starship={ship}
-              />
-            </Link>)
+            />
+          </Link>)
           })
         }
         </ul>

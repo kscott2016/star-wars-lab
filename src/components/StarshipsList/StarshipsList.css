@@ -1,0 +1,16 @@
+.title-section{
+  background-color: rgb(3, 65, 65);
+  text-align: center;
+  padding:0.5rem;
+}
+
+section.starships-wrapper{
+  margin: auto;
+}
+
+ul.starships-list{
+  margin-top:100px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:30px;
+}

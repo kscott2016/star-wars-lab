@@ -4,8 +4,6 @@ import { Route, Routes } from "react-router-dom"
 //css
 import './App.css'
 
-//components
-
 //pages
 import StarshipDetails from "./pages/StarshipDetails/StarshipDetails"
 
@@ -16,18 +14,16 @@ function App() {
 
   return (
     <>
-      
       <Routes>
         <Route 
           path="/starships" 
           element={<StarshipList/>} 
         />
         <Route 
-          path="/starships/:id/" 
+          path="/starships/:starshipId/" 
           element={<StarshipDetails/>} 
         />
       </Routes>
-      
     </>
   )
 }
