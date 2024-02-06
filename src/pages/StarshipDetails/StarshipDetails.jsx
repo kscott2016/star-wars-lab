@@ -3,34 +3,42 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
 // services
-import { getStarships} from "../../services/sw-api"
+import { getStarship} from "../../services/sw-api"
+
+//css
+import './StarshipDetails.css'
 
 const StarshipDetails = () => {
   const [starshipDetails, setStarshipDetails] = useState({})
 
   const { starshipId } = useParams()
-  console.log("StarshipId:"+ {starshipId})
+  console.log("Inside starShipDetails StarshipId:"+ {starshipId})
   
 
-  useEffect(() => {
-    const fetchDetails = async () => {
-      const starshipData = await getStarships(starshipId)
-      setStarshipDetails(starshipData)
-    }
-    fetchDetails()
-  }, [starshipId])
+  // useEffect(() => {
+  //   const fetchDetails = async () => {
+  //     const starshipData = await getStarship(starshipId)
+  //     setStarshipDetails(starshipData)
+  //   }
+    
+  //   fetchDetails()
+  // }, [starshipId])
 
- 
+
 
   return (
-    <main className="starship-details">
-      <div className="starship-card">
-        <h2>Name: {starshipDetails.name}</h2>
-        <h2>Model: {starshipDetails.model}</h2>
+    <>
+   
+    <h1>TEST</h1>
+      <main className="starship-details">
+        <div className="starship-card">
+          <h2>Name: {starshipDetails.name}</h2>
+          <h2>Model: {starshipDetails.model}</h2>
 
-        Return Link
-      </div>
-    </main>
+          Return Link
+        </div>
+      </main>
+    </>
   )
 }
 
