@@ -7,6 +7,7 @@ const NavBar = () => {
   return (
     <header>
       <nav>
+      <Link to='/'>Home</Link>
         <Link to='/starships'>All Starships</Link>
       </nav>
     </header>

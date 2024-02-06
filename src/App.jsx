@@ -9,6 +9,7 @@ import StarshipDetails from "./pages/StarshipDetails/StarshipDetails"
 
 //components
 import NavBar from "./components/NavBar/NavBar"
+import Home from "./components/Home/Home"
 
 import StarshipList from "./components/StarshipsList/StarshipsList"
 
@@ -18,10 +19,12 @@ function App() {
   return (
     <>
     <NavBar />
-    <main>
-      <img src="https://i.pinimg.com/originals/32/a1/da/32a1da27229539e02f5676b9bc8aa1b3.png" />
-    </main>
+
       <Routes>
+      <Route 
+          path="/" 
+          element={<Home/>} 
+        />
         <Route 
           path="/starships" 
           element={<StarshipList/>} 

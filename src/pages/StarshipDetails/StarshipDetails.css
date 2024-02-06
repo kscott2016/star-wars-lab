@@ -1,6 +1,10 @@
+main{
+  align-items: start;
+}
+
 .starship-card{
   background: rgb(3, 65, 65);
-  width: 400px;
+  width: 600px;
   height: 150px;
   text-align: left;
   padding:100px 50px;
@@ -8,7 +12,7 @@
   flex-direction: column;
   justify-content: center;
   border-radius: 5px;
-  margin:auto;
+  margin:30px auto;
   font-size:1.25em;
   text-transform: uppercase;
 }
@@ -19,7 +23,7 @@ h2{
 }
 
 .title-section{
-  margin-bottom:100px;
+  margin-bottom:20px;
 }
 
 .return-link{

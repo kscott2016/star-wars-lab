@@ -5,10 +5,12 @@ header{
   justify-content: end;
   padding:20px 100px;
   background-color: black;
+  
 }
 
 nav>a{
   color:yellow;
   font-size: 1.5em;
   text-transform: uppercase;
+  margin:0 30px;
 }
