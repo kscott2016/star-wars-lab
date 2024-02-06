@@ -23,7 +23,11 @@ function App() {
   return (
     <>
     {/* <h1>Test</h1> */}
-      <ul>
+    <section className='title-section'>
+      <h1>Star Wars Starships</h1>
+    </section>
+    <section className='starships-wrapper'>
+      <ul className='starships-list'>
         {starships.map((ship,idx) => (
           <Starship 
           key= {idx}
@@ -31,6 +35,7 @@ function App() {
           />
         ))}
       </ul>
+      </section>
     </>
   )
 }

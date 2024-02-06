@@ -1,0 +1,10 @@
+li.starship-item{
+  background: rgb(3, 65, 65);
+  width: 300px;
+  height: 100px;
+  text-align: center;
+  padding:20px;
+  display: inherit;
+  justify-content: center;
+  align-items: center;
+}
