@@ -7,4 +7,5 @@ li.starship-item{
   display: inherit;
   justify-content: center;
   align-items: center;
+  border-radius: 5px;
 }
