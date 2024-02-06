@@ -10,7 +10,7 @@ import { getStarships } from "../../services/sw-api"
 import './StarshipsList.css'
 
 //components
-import Starship from "../../components/Starships/Starship"
+import Starship from "../Starships/Starships"
 
 const StarshipList = () => {
 
@@ -24,7 +24,7 @@ const StarshipList = () => {
     fetchStarships()
   }, [])
 
-  if(!starshipList.length) return <h1>Loading...</h1>
+  if(!starshipList.length) return <h1 className="loading-heading">Loading...</h1>
 
   return ( 
     <>
@@ -34,13 +34,9 @@ const StarshipList = () => {
       <section className='starships-wrapper'>
         <ul className='starships-list'>
           {starshipList.map((ship,idx) => {
-            console.log("Ship:")
-            console.log(ship)
-
+        
           let shipID = (ship.url).replace('https://swapi.dev/api/starships/',"")
           shipID=shipID.replace('/','')
-          console.log("ShipID")
-          console.log(shipID)
 
           return (<Link key= {idx} to={`/starships/${shipID}`}>
             <Starship key={shipID}

@@ -1,6 +1,7 @@
 // npm modules
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 //css
 import './StarshipDetails.css'
@@ -25,18 +26,20 @@ const StarshipDetails = () => {
     fetchDetails()
   }, [starshipId])
 
-
+  if(!starshipDetails.length) return <h1 className="loading-heading">Loading...</h1>
 
   return (
     <>
-   
-    <h1>TEST</h1>
+
+      <section className='title-section'>
+        <h1>Star Wars Starships</h1>
+      </section>
       <main className="starship-details">
         <div className="starship-card">
           <h2>Name: {starshipDetails.name}</h2>
           <h2>Model: {starshipDetails.model}</h2>
-
-          Return Link
+          <Link className="return-link" to={`/starships/`}>
+          Return</Link>
         </div>
       </main>
     </>
